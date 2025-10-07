@@ -1,15 +1,74 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.sql.SQLOutput;
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class rectangleInfo
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        double length = 0.0;
+        double width = 0.0;
+        double area = 0.0;
+        double perimeter = 0.0;
+        double hypotenuse = 0.0;
+        boolean done = false;
+        String trash = " ";
+
+
+
+        do
+        {
+            System.out.print("Enter the width: ");
+            if(in.hasNextDouble())
+            {
+                width = in.nextDouble();
+                in.nextLine();
+                if(width <= 0)
+                {
+                    System.out.println("Width needs to be greater than 0");
+                }else
+                {
+                    done = true;
+                }
+            }
+            else
+            {
+                trash = in.nextLine();
+                System.out.println("Illegal number: " + trash + " please entre a valid input");
+            }
+        }while(!done);
+
+        done = false;
+
+        do
+        {
+            System.out.print("Enter the length: ");
+            if(in.hasNextDouble())
+            {
+                length = in.nextDouble();
+                in.nextLine();
+                if(length <= 0)
+                {
+                    System.out.println("Length needs to be greater than 0");
+                }else
+                {
+                    done = true;
+                }
+            }
+            else
+            {
+                trash = in.nextLine();
+                System.out.println("Illegal number: " + trash + " please entre a valid input");
+            }
+        }while(!done);
+
+        area = length * width;
+        perimeter = 2 * (length * width);
+        hypotenuse = Math.sqrt(length*length + width*width);
+
+        System.out.printf("For a rectangle with a length %.2f and width %.2f%n ", length, width);
+        System.out.printf("Area: %.2f%n", area);
+        System.out.printf("Perimeter: %.2f%n", perimeter);
+        System.out.printf("Hypotenuse: %.2f%n", hypotenuse);
     }
 }
