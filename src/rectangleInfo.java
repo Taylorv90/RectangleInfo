@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class rectangleInfo
@@ -15,9 +14,7 @@ public class rectangleInfo
         String trash = " ";
 
 
-
-        do
-        {
+        do{
             System.out.print("Enter the width: ");
             if(in.hasNextDouble())
             {
@@ -40,8 +37,7 @@ public class rectangleInfo
 
         done = false;
 
-        do
-        {
+        do{
             System.out.print("Enter the length: ");
             if(in.hasNextDouble())
             {
